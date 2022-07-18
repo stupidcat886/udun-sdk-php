@@ -1,6 +1,7 @@
 {
     "name": "udun/udun-wallet-sdk",
     "description": "udun-wallet-sdk",
+    "version": "1.0.0",
     "type": "1",
     "license": "MIT",
     "authors": [
