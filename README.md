@@ -3,29 +3,29 @@ udun-sdk-php
 
 ## 安装
 ### 方式1：命令安装
-···
+```php
 	composer require udun/udun-wallet-sdk:dev-main
-···
+```
 
 ### 方式2：composer 配置安装
 1,在composer.json添加如下配置
-···
+```php
 {
 	"require":{
 		"udun/udun-wallet-sdk":"dev-main"
 	}
 }
-···
+```
 
 2,执行命令
-···
+```
 	composer install
-···
+```
 
 ## 使用
 
 1,新建UdunController.php 
-···
+```
 	use udun\Dispatch\UdunDispatch;
 
 	class UdunController{
@@ -45,10 +45,10 @@ udun-sdk-php
 	        ]);
 	    }
 	}
-···
+```
 2,在需要使用到接口的类继承 UdunController
 
-···
+```
 	##使用示例
 	namespace xxxx;
 	class Index extends UdunController{
@@ -92,16 +92,16 @@ udun-sdk-php
 		 
 
 	}
-···
+```
 
 
+##其他
 
-curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to raw.githubusercontent.com:443
+```
+##curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to raw.githubusercontent.com:443
 如果提示以上错误需要添加ca证书
-
-···
 ##php.ini  打开ssl
 extension=php_openssl.dll;
 ##证书路径
 openssl.cafile=D:\cacert.pem
-···
+```
