@@ -104,7 +104,7 @@ class Clients extends Api
         //接收回调参数
         $content = file_get_contents('php://input');
         //验证签名
-        $sign = $this->signature($content['body'],$content['timestamp'],$content['nonce'])
+        $sign = $this->signature($content['body'],$content['timestamp'],$content['nonce']);
         if ($content['sign'] != $sign) {
             throw new UdunDispatchException(-1, '签名错误');
             return ;
