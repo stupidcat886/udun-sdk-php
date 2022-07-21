@@ -36,3 +36,6 @@ $result = new \Udun\Dispatch\UdunDispatch([
 //返回内容： { ["code"]=> int(200) ["message"]=> string(7) "SUCCESS" }
 
 
+//回调测试
+// var_dump($result->callback());
+//返回内容：body=%7B%22address%22%3A%22TEpK1aWkjDue6j8reeeMqG7hdJ5tRytyAF%22%2C%22amount%22%3A%2210000000%22%2C%22blockHigh%22%3A%22-1%22%2C%22businessId%22%3A%22sn00001%22%2C%22coinType%22%3A%22195%22%2C%22decimals%22%3A%226%22%2C%22fee%22%3A%220%22%2C%22mainCoinType%22%3A%22195%22%2C%22memo%22%3A%22%22%2C%22status%22%3A2%2C%22tradeId%22%3A%22998006370676506624%22%2C%22tradeType%22%3A2%2C%22txId%22%3A%22%22%7D&nonce=eHSrfr&sign=679eeebb2bf221e16fe49fefef635d61&timestamp=1658370940327

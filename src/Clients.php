@@ -100,19 +100,34 @@ class Clients extends Api
 
 
 
+    //自定义日志
+    function printLog($msg) {
+        if (!is_dir('log')){
+            mkdir('log',0777,true);
+        }
+        $path="log/".date('Y-m-d').".log";
+        file_put_contents($path, "【" . date('Y-m-d H:i:s') . "】" . $msg . "\r\n\r\n", FILE_APPEND);
+    }
+    //回调函数
     public function callback(){
-        //接收回调参数
-        $content = file_get_contents('php://input');
+        $body =  $_POST['body'];
+        $nonce = $_POST['nonce'];
+        $timestamp = $_POST['timestamp'];
+        $sign = $_POST['sign'];
+        //接收回调参数 用于日志记录
+        //$content = file_get_contents('php://input');
+        //$this->printLog("回调接收内容:".$content);
         //验证签名
-        $sign = $this->signature($content['body'],$content['timestamp'],$content['nonce']);
-        if ($content['sign'] != $sign) {
+        $signCheck = $this->signature($body,$timestamp,$nonce);
+        if ($sign != $signCheck) {
             throw new UdunDispatchException(-1, '签名错误');
             return ;
         }
-        $body = json_decode($content['body']);
+        $body = json_decode($body);
+        //$this->printLog("回调接收内容(tradeType):".$body->tradeType);
             //$body->tradeType 1充币回调 2提币回调
         if ($body->tradeType == 1) {
-
+                
             //$body->status 0待审核 1审核成功 2审核驳回 3交易成功 4交易失败
             if($body->status == 3){
                 //业务处理 
