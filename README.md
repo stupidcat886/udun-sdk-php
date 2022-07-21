@@ -89,7 +89,11 @@ udun-sdk-php
 	    }
 
 	    //交易回调
-		 
+		public function callback()
+	    {
+	    	$result =  $this->callback();
+	        return json($result);
+	    } 
 
 	}
 ```
