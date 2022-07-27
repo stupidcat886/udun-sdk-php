@@ -1,9 +1,9 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-$merchant_no = 309626;
-$api_key= 'c789324a4383edbefbabd388ec8a3872';
-$gateway_address= 'https://sig11.udun.io';
-$callUrl = "https://localhost/callUrl";
+$merchant_no = 30000; //商户号
+$api_key= 'c789324a4XXXXXXX88ec8a3872';// apikey
+$gateway_address= 'https://sig11.udun.io'; //节点
+$callUrl = "https://localhost/callUrl"; //回调地址
 /** @var \udun\Dispatch\UdunDispatch $result */
 $result = new \Udun\Dispatch\UdunDispatch([
             'merchant_no' => $merchant_no,

@@ -3,11 +3,14 @@ namespace Udun\Dispatch;
 use Hanson\Foundation\AbstractAPI;
 class Api extends AbstractAPI
 {
-
-    protected $merchant_no;
-    protected $api_key;
+    //商户号
+    protected $merchant_no;   
+    //apikey      
+    protected $api_key;  
+    //节点地址           
     protected $gateway_address;
-    protected $callUrl;
+    //回调地址     
+    protected $callUrl;             
     public function __construct( $merchant_no, string $api_key,string $gateway_address, string $callUrl)
     {
         $this->merchant_no = $merchant_no;
@@ -20,8 +23,8 @@ class Api extends AbstractAPI
     /**
      * @param string $method  
      * @param array $params
-     * @return mixed
-     * @throws MeituanDispatchException
+     * @return result
+     * @throws UdunDispatchException
      */
     public function request(string $method, array $body)
     {
