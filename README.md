@@ -12,7 +12,7 @@ udun-sdk-php
 ```php
 {
 	"require":{
-		"udun/udun-wallet-sdk":"1.0.0"
+		"udun/udun-wallet-sdk": "^1.0"
 	}
 }
 ```
