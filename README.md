@@ -4,7 +4,7 @@ udun-sdk-php
 ## 安装
 ### 方式1：命令安装
 ```php
-	composer require udun/udun-wallet-sdk:dev-main
+	composer require udun/udun-wallet-sdk
 ```
 
 ### 方式2：composer 配置安装
@@ -12,7 +12,7 @@ udun-sdk-php
 ```php
 {
 	"require":{
-		"udun/udun-wallet-sdk":"dev-main"
+		"udun/udun-wallet-sdk":"1.0.0"
 	}
 }
 ```
